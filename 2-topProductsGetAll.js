@@ -4,7 +4,6 @@ const main = async () => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto('https://webscraper.io/test-sites/e-commerce/static');
-    //   await page.screenshot({ path: 'top-products.png' });
 
     const products = await page.$$eval(".thumbnail", (elements) => {
         const product = elements.map((element) => {
